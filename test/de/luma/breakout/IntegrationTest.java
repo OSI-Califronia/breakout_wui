@@ -1,3 +1,4 @@
+package de.luma.breakout;
 import org.junit.*;
 
 import play.test.*;
