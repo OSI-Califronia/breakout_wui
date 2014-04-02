@@ -1,4 +1,4 @@
-package controllers;
+package de.luma.breakout.view.wui.controllers;
 
 import java.io.File;
 import java.util.HashMap;
@@ -81,7 +81,7 @@ public class Application extends Controller  {
 			return redirect(routes.Application.socket_index());
 		}
 		
-		return ok(views.html.login.render(""));
+		return ok(de.luma.breakout.view.wui.views.html.login.render(""));
 	}
 	
 	/**
@@ -108,7 +108,7 @@ public class Application extends Controller  {
 			return redirect(routes.Application.socket_index());
 		}
 		
-		return ok(views.html.login.render("Username or password are wrong."));
+		return ok(de.luma.breakout.view.wui.views.html.login.render("Username or password are wrong."));
 	}
 	
 	
@@ -150,7 +150,7 @@ public class Application extends Controller  {
 	 */
     @play.mvc.Security.Authenticated(Secured.class)
     public static Result socket_index() {
-    	return ok(views.html.socket_index.render());
+    	return ok(de.luma.breakout.view.wui.views.html.socket_index.render());
     }
     
     /**
@@ -170,7 +170,7 @@ public class Application extends Controller  {
 	 */
 	@play.mvc.Security.Authenticated(Secured.class)
     public static Result index() {		
-    	return ok(views.html.index.render());
+    	return ok(de.luma.breakout.view.wui.views.html.index.render());
     }
     
 	
@@ -181,7 +181,7 @@ public class Application extends Controller  {
     public static Result playGrid() {
    	
     	if (getGameController().getState() == GAME_STATE.RUNNING) {   // render playgrid (game is running)
-    		return ok(views.html.gamegrid.render(
+    		return ok(de.luma.breakout.view.wui.views.html.gamegrid.render(
     				getGameController().getGridSize().width,
     				getGameController().getGridSize().height,
     				HtmlHelper.getBricks(gameController), HtmlHelper.getBalls(gameController)));
@@ -190,7 +190,7 @@ public class Application extends Controller  {
     		return getLevels();
     		
     	} else {  // render menu items
-    		return ok(views.html.menu.render(HtmlHelper.getMenu(
+    		return ok(de.luma.breakout.view.wui.views.html.menu.render(HtmlHelper.getMenu(
     				gameController.getGameMenu().getMenuItems(),
     				gameController.getGameMenu().getTitle())));
     	}

@@ -1,4 +1,4 @@
-package controllers;
+package de.luma.breakout.view.wui.controllers;
 
 import java.util.ArrayList;
 import java.util.List;

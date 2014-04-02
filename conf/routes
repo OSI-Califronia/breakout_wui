@@ -2,24 +2,24 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-GET     /                        controllers.Application.index()
-GET		/login                   controllers.Application.login()      
-POST    /login                   controllers.Application.processLogin()
-GET		/logout					 controllers.Application.logout()
-GET     /selectmenu              controllers.Application.selectmenu(index)
-GET     /gameInput               controllers.Application.gameInput(key)
-GET     /playGrid                controllers.Application.playGrid()
-GET		/loadLevel				 controllers.Application.loadLevel(file)
-GET		/test					controllers.Application.test()
+GET     /                        de.luma.breakout.view.wui.controllers.Application.index()
+GET		/login                   de.luma.breakout.view.wui.controllers.Application.login()      
+POST    /login                   de.luma.breakout.view.wui.controllers.Application.processLogin()
+GET		/logout					 de.luma.breakout.view.wui.controllers.Application.logout()
+GET     /selectmenu              de.luma.breakout.view.wui.controllers.Application.selectmenu(index)
+GET     /gameInput               de.luma.breakout.view.wui.controllers.Application.gameInput(key)
+GET     /playGrid                de.luma.breakout.view.wui.controllers.Application.playGrid()
+GET		/loadLevel				 de.luma.breakout.view.wui.controllers.Application.loadLevel(file)
+GET		/test					 de.luma.breakout.view.wui.controllers.Application.test()
 # websocket routes
-GET		/socket_connect			controllers.Application.socket_connect()
-GET		/socket_index			controllers.Application.socket_index()
+GET		/socket_connect			 de.luma.breakout.view.wui.controllers.Application.socket_connect()
+GET		/socket_index			 de.luma.breakout.view.wui.controllers.Application.socket_index()
 
 #openId routes
-GET		/openid_auth			controllers.Application.openid_auth()
-GET		/openid_verify			@controllers.Application.openid_verify()
+GET		/openid_auth			 de.luma.breakout.view.wui.controllers.Application.openid_auth()
+GET		/openid_verify			@de.luma.breakout.view.wui.controllers.Application.openid_verify()
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
-GET     /webjars/*file              controllers.WebJarAssets.at(file)
+GET     /assets/*file            controllers.Assets.at(path="/public", file)
+GET     /webjars/*file           controllers.WebJarAssets.at(file)
 
